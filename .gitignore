@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Environment files (never commit secrets). Example files are safe to track.
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Build output
+client/dist/
+build/
+out/
+
+# Uploads (user generated - keep out of git)
+server/uploads/*
+!server/uploads/.gitkeep
+
+# Logs
+*.log
+*.err
+*.pid
+npm-debug.log*
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

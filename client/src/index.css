@@ -1,0 +1,227 @@
+:root {
+  --brand-primary: #198754;
+  --brand-dark: #0f5132;
+  --brand-muted: #6c757d;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #1f2933;
+  background-color: #f8f9fa;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--brand-primary);
+}
+
+.page-section {
+  padding: 3.5rem 0;
+}
+
+/* ---------- Navbar ---------- */
+.site-navbar {
+  border-bottom: 1px solid #e9ecef;
+}
+
+.site-navbar .navbar-brand {
+  color: var(--brand-dark);
+  display: flex;
+  align-items: center;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background-color: var(--brand-primary);
+  color: #fff;
+  font-weight: 700;
+}
+
+.site-navbar .nav-link {
+  color: #344054;
+}
+
+.site-navbar .nav-link.active {
+  color: var(--brand-primary);
+  font-weight: 600;
+}
+
+.site-navbar .nav-logout {
+  color: var(--brand-muted);
+  text-decoration: none;
+}
+
+.site-navbar .nav-logout:hover {
+  color: #b02a37;
+  text-decoration: underline;
+}
+
+/* ---------- Hero ---------- */
+.hero-section {
+  background: linear-gradient(135deg, #0f5132 0%, #198754 55%, #2fa86f 100%);
+  color: #fff;
+  padding: 4.5rem 0;
+}
+
+.hero-section .lead {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-card {
+  border-radius: 1rem;
+}
+
+.check-dot {
+  flex: 0 0 auto;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: 0.15rem;
+  border-radius: 50%;
+  background-color: rgba(25, 135, 84, 0.15);
+  border: 2px solid var(--brand-primary);
+}
+
+/* ---------- Steps ---------- */
+.step-card {
+  border-radius: 0.75rem;
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background-color: var(--brand-primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* ---------- CTA band ---------- */
+.cta-band {
+  background-color: var(--brand-dark);
+}
+
+/* ---------- Page header ---------- */
+.page-header {
+  background-color: #eef7f2;
+  border-bottom: 1px solid #dde7e2;
+  padding: 3rem 0;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background-color: #101828;
+  color: #d0d5dd;
+  margin-top: auto;
+}
+
+.site-footer .footer-links a {
+  color: #d0d5dd;
+  text-decoration: none;
+}
+
+.site-footer .footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ---------- Empty state ---------- */
+.empty-state {
+  background-color: #fff;
+  border: 1px dashed #ced4da;
+  border-radius: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* ---------- Donor dashboard sidebar ---------- */
+.sidebar-link {
+  color: #344054;
+}
+
+.sidebar-link:hover {
+  background-color: #f2f4f7;
+  color: #067647;
+}
+
+.sidebar-link.active {
+  background-color: #ecfdf3;
+  color: #067647;
+  font-weight: 600;
+}
+
+/* ---------- Misc ---------- */
+.form-text,
+.text-muted {
+  color: #667085 !important;
+}
+
+@media (max-width: 575.98px) {
+  .hero-section {
+    padding: 3rem 0;
+  }
+
+  .page-section {
+    padding: 2.5rem 0;
+  }
+}
+
+/* ---------- Responsive polish (Phase 14) ---------- */
+
+/* Long user-entered strings (addresses, notes, organization names) must never
+   make the page scroll sideways on a phone. */
+.card-body,
+.list-group-item,
+.table td,
+.table th {
+  overflow-wrap: break-word;
+}
+
+/* Notification dropdown: 20rem where it fits, capped to the viewport
+   otherwise, so it never runs past the right edge of a small screen. */
+.notification-menu {
+  width: 20rem;
+  max-width: calc(100vw - 2rem);
+}
+
+/* Dashboard menu below the lg breakpoint: a single horizontally scrollable
+   pill row instead of a tall column that pushes the page content down. */
+@media (max-width: 991.98px) {
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .sidebar-nav .nav-link {
+    white-space: nowrap;
+  }
+}
+
+/* The display-5 hero headline is oversized on the smallest screens. */
+@media (max-width: 575.98px) {
+  .hero-section .display-5 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+}

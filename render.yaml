@@ -1,0 +1,26 @@
+# Render Blueprint for the Donation & Reuse Platform API.
+# In Render: New -> Blueprint -> select this repository. Render reads this
+# file and creates the web service with the settings below. Every value can
+# also be entered manually in the dashboard using the same fields.
+services:
+  - type: web
+    name: donation-reuse-api
+    runtime: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false # set in the dashboard: your MongoDB Atlas connection string
+      - key: JWT_SECRET
+        generateValue: true # Render creates a strong secret automatically
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: CLIENT_URL
+        sync: false # set in the dashboard: exact frontend origin, no trailing slash
+      - key: MAP_API_KEY
+        sync: false
+        required: false # the app runs without a map key
